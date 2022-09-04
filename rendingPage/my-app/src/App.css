@@ -1,0 +1,56 @@
+html,
+body,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.header__head {
+  width: 95%;
+  max-width: 1700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav div a {
+  font-size: 20px;
+  font-weight: 900;
+  color: #333;
+  text-decoration: none;
+}
+
+.header__nav div a.on {
+  color: red;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section p {
+  font-size: 80px;
+  font-weight: 900;
+}

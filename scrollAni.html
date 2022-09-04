@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    li {
+      height: 80vh;
+    }
+    .active {
+      border: 1px solid #000;
+    }
+  </style>
+  <body>
+    <ul class="ul">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <script>
+      const test = document.querySelectorAll("li")
+      let winH
+
+      function addClass() {
+        test.forEach((item) => {
+          winH = window.innerHeight / 6
+          let itemTop = item.getBoundingClientRect().top
+          let itemTop2 = item.offsetTop
+          console.log(itemTop, itemTop2)
+          if (winH > itemTop) {
+            item.classList.add("active")
+          }
+        })
+      }
+
+      window.addEventListener("scroll", function () {
+        addClass()
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>return</title>
+  <style>
+
+  </style>
+</head>
+<div class="wrap"></div>
+<input type="text" class="inputText">
+<button class="btn">클릭해</button>
+<button class="btn2">클릭해2</button>
+<body>
+  <script>
+    function sum(num1, num2){
+      return num1 + num2
+    }
+    const result = sum(10,20);
+    const result2 = sum(120,70);
+  // console.log(result, result2);
+
+
+     function text(){
+       return '<li class="list"></li>';
+     }
+
+     const what =  text()
+
+     const wrap =  document.querySelector(".wrap");
+     const inputText =  document.querySelector(".inputText");
+     const btn =  document.querySelector(".btn");
+     const btn2=  document.querySelector(".btn2");
+
+    function eventReturn(e){
+      return e.target.value;
+    }
+
+
+   let theClick = btn.addEventListener("click",  eventReturn(e));
+
+   btn2.addEventListener("click",  function(){
+    alert(theClick);
+   });
+
+
+    const a = 10;
+    const b = 20;
+    function add(x,y){
+      const sum = x+y;
+      return sum;
+    }
+
+   const total = add(a,b);
+   console.log(total);
+
+
+  </script>
+</body>
+
+</html>

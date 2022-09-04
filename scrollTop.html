@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      height: 50vh;
+    }
+    button {
+      position: fixed;
+    }
+  </style>
+  <body>
+    <button>Top</button>
+    <div style="background-color: red"></div>
+    <div style="background-color: green"></div>
+    <div style="background-color: blue"></div>
+    <div style="background-color: yellow"></div>
+    <script>
+      const topBtn = document.querySelector("button")
+
+      topBtn.addEventListener("click", function () {
+        let windowscroll = window.scrollY
+
+        function goTop() {
+          let scolling = (windowscroll -= 20)
+          let moving = requestAnimationFrame(goTop)
+          console.log(scolling)
+          window.scrollTo(0, scolling)
+          if (scolling <= 0) {
+            cancelAnimationFrame(moving)
+          }
+        }
+        goTop()
+      })
+    </script>
+  </body>
+</html>
